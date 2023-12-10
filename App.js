@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomePage from './HomePage';
+import Riding from './Riding';
+import TotalVehicles from './TotalVehicles';
+import Stationed from './Stationed';
+import VehicleDetails from './VehicleDetails';
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home"  screenOptions={{headerShown:false}}>
+        <Stack.Screen name="Home" component={HomePage} options={{ title: 'Home' }} />
+        <Stack.Screen name="Riding" component={Riding} options={{ title: 'Riding' }} />
+        <Stack.Screen name="TotalVehicles" component={TotalVehicles} options={{ title: 'TotalVehicles' }} />
+        <Stack.Screen name="Stationed" component={Stationed} options={{ title: 'Stationed' }} />
+        <Stack.Screen name="VehicleDetails" component={VehicleDetails} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
