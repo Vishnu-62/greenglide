@@ -39,7 +39,7 @@ export default function HomePage() {
   };
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('E:/projects/vehicle2/speedygo/bike7.jpg')} style={styles.backgroundImage}>
+      <ImageBackground source={require('E:/projects/vehicle2/speedygo/vehicleimg/bike7.jpg')} style={styles.backgroundImage}>
         <View style={styles.content}>
           <View style={styles.logoContainer}>
             <Image source={require('E:/projects/vehicle2/speedygo/logo2.png')} style={styles.logo} />
